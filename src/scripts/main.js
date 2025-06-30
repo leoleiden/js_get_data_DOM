@@ -1,5 +1,7 @@
+'use strict';
 // main.js
 
+// write your code here
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Отримати всі текстові дані з span з класом population
     const populationSpans = document.querySelectorAll('.population');
@@ -17,10 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Перевіряємо, чи це валідне число
         if (!isNaN(number)) {
             numericPopulations.push(number);
-        } else {
-            // Вивід попередження, якщо дані не можуть бути розібрані
-            console.warn(`Could not parse population from "${text}". It was skipped.`);
         }
+        // else {
+        // Коментар: Вивід попередження, якщо дані не можуть бути розібрані
+        // console.warn(`Could not parse population from "${text}". It was skipped.`);
+        // }
     });
 
     // 3. Обчислити середнє та загальне значення на основі розібраних чисел
@@ -55,17 +58,21 @@ document.addEventListener('DOMContentLoaded', () => {
     // Оновлюємо вміст відповідних span-елементів
     if (averagePopulationSpan) {
         averagePopulationSpan.textContent = formattedAveragePopulation;
-    } else {
-        console.error("Element with class 'average-population' not found in HTML.");
     }
+    // else {
+    // Коментар: Вивід помилки, якщо елемент не знайдено
+    // console.error("Element with class 'average-population' not found in HTML.");
+    // }
 
     if (totalPopulationSpan) {
         totalPopulationSpan.textContent = formattedTotalPopulation;
-    } else {
-        console.error("Element with class 'total-population' not found in HTML.");
     }
+    // else {
+    // Коментар: Вивід помилки, якщо елемент не знайдено
+    // console.error("Element with class 'total-population' not found in HTML.");
+    // }
 
-    console.log("JavaScript task completed!");
-    console.log("Total Population Calculated:", formattedTotalPopulation);
-    console.log("Average Population Calculated:", formattedAveragePopulation);
+    // console.log("JavaScript task completed!");
+    // console.log("Total Population Calculated:", formattedTotalPopulation);
+    // console.log("Average Population Calculated:", formattedAveragePopulation);
 });
