@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // 2. Переконатися, що рядок можна перетворити на число, і перетворити його
         // Видаляємо коми з рядка, щоб його можна було перетворити на число
         let cleanText = text.replace(/,/g, '');
-        let number = parseInt(cleanText, 10); // Використовуємо parseInt для цілих чисел
+        let number = parseInt(cleanText, 10);
+        // Використовуємо parseInt для цілих чисел
 
         // Перевіряємо, чи це валідне число
         if (!isNaN(number)) {
@@ -22,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // else {
         // Коментар: Вивід попередження, якщо дані не можуть бути розібрані
-        // console.warn(`Could not parse population from "${text}". It was skipped.`);
+        // console.warn(`Could not parse population from "${text}". Skipped.`);
         // }
     });
 
@@ -48,9 +49,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const formattedTotalPopulation = totalPopulation.toLocaleString('en-US');
 
     // Форматуємо середнє населення з роздільником тисяч, без десяткових знаків
-    const formattedAveragePopulation = averagePopulation.toLocaleString('en-US', {
-        maximumFractionDigits: 0 // Округлення до цілого числа, якщо потрібно для середнього
-    });
+    const formattedAveragePopulation = averagePopulation.toLocaleString(
+        'en-US',
+        { maximumFractionDigits: 0 }, // Округлення до цілого числа, якщо потрібно
+    );
 
     const averagePopulationSpan = document.querySelector('.average-population');
     const totalPopulationSpan = document.querySelector('.total-population');
@@ -61,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // else {
     // Коментар: Вивід помилки, якщо елемент не знайдено
-    // console.error("Element with class 'average-population' not found in HTML.");
+    // console.error("Element with class 'average-population' not found.");
     // }
 
     if (totalPopulationSpan) {
@@ -69,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // else {
     // Коментар: Вивід помилки, якщо елемент не знайдено
-    // console.error("Element with class 'total-population' not found in HTML.");
+    // console.error("Element with class 'total-population' not found.");
     // }
 
     // console.log("JavaScript task completed!");
